@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>203714493623-hki1g7hjarrjqnpgenru57j6c63n53jh.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.203714493623-hki1g7hjarrjqnpgenru57j6c63n53jh</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBByH7jyLYceob-5njegzgqb7Ek-YbYxc8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>203714493623</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Pumpkin.NuorisoKortti</string>
+	<key>PROJECT_ID</key>
+	<string>nuorisokortti</string>
+	<key>STORAGE_BUCKET</key>
+	<string>nuorisokortti.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:203714493623:ios:2ce05863300269bbabe132</string>
+</dict>
+</plist>
