@@ -19,6 +19,8 @@
 		8E4CA17A2923760F00D06651 /* NuorisoKorttiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4CA1792923760F00D06651 /* NuorisoKorttiTests.swift */; };
 		8E4CA1842923760F00D06651 /* NuorisoKorttiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4CA1832923760F00D06651 /* NuorisoKorttiUITests.swift */; };
 		8E4CA1862923760F00D06651 /* NuorisoKorttiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4CA1852923760F00D06651 /* NuorisoKorttiUITestsLaunchTests.swift */; };
+		8E4FEE81296703C500B2A8BF /* LoginNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4FEE80296703C500B2A8BF /* LoginNewViewController.swift */; };
+		8E8E66232965832E009104C0 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E66222965832E009104C0 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		8E4CA17F2923760F00D06651 /* NuorisoKorttiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NuorisoKorttiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E4CA1832923760F00D06651 /* NuorisoKorttiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NuorisoKorttiUITests.swift; sourceTree = "<group>"; };
 		8E4CA1852923760F00D06651 /* NuorisoKorttiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NuorisoKorttiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8E4FEE80296703C500B2A8BF /* LoginNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNewViewController.swift; sourceTree = "<group>"; };
+		8E8E66222965832E009104C0 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				8E43C867295C71ED00B1BF51 /* GoogleService-Info.plist */,
+				8E4FEE80296703C500B2A8BF /* LoginNewViewController.swift */,
 				8E4CA1622923760C00D06651 /* AppDelegate.swift */,
 				8E4CA1642923760C00D06651 /* SceneDelegate.swift */,
 				8E4CA1662923760C00D06651 /* ViewController.swift */,
@@ -113,6 +118,7 @@
 				8E4CA16B2923760F00D06651 /* Assets.xcassets */,
 				8E4CA16D2923760F00D06651 /* LaunchScreen.storyboard */,
 				8E4CA1702923760F00D06651 /* Info.plist */,
+				8E8E66222965832E009104C0 /* Model.swift */,
 			);
 			path = NuorisoKortti;
 			sourceTree = "<group>";
@@ -276,6 +282,8 @@
 				8E4CA1672923760C00D06651 /* ViewController.swift in Sources */,
 				8E4CA1632923760C00D06651 /* AppDelegate.swift in Sources */,
 				8E4CA1652923760C00D06651 /* SceneDelegate.swift in Sources */,
+				8E8E66232965832E009104C0 /* Model.swift in Sources */,
+				8E4FEE81296703C500B2A8BF /* LoginNewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
