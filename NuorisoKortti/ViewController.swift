@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     var username = ""
     var etunimi = ""
     var sukunimi = ""
-    var password = ""
+    var puhelin = ""
         override func viewDidLoad() {
         super.viewDidLoad()
         loginLbl.text = username
@@ -36,8 +36,9 @@ class ViewController: UIViewController {
                 let users = try JSONDecoder().decode([User2].self, from: data)
                 self.etunimi = (users.first?.Etunimi)!
                 self.sukunimi = (users.first?.Sukunimi)!
-                self.passwordLbl.text = self.sukunimi
-                self.loginLbl.text = self.etunimi
+                self.puhelin = (users.first?.Puhelinnumero)!
+                self.passwordLbl.text = "Nimi :\(self.sukunimi) \(self.etunimi)"
+                self.loginLbl.text = "Puhelin : \(self.puhelin)"
 
             }
             catch
