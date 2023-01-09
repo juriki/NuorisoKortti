@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     var etunimi = ""
     var sukunimi = ""
     var puhelin = ""
+    var password = ""
+    
         override func viewDidLoad() {
         super.viewDidLoad()
         loginLbl.text = username
@@ -73,10 +75,5 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func Kirjaudu(_ sender: UIButton)
-    {
-        kirjaudu(img: iloinenAskolaa, button: sender)
-    }
-    @IBOutlet weak var test2: UITextField!
 }
 

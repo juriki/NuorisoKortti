@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cNi-R0-Bre">
-    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,21 +13,21 @@
             <objects>
                 <viewController storyboardIdentifier="LoginNewViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xev-qW-L1D" customClass="LoginNewViewController" customModule="NuorisoKortti" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8vT-PO-zfz">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Käyttäjänimi" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="k3O-A8-KPE">
-                                <rect key="frame" x="20" y="394" width="390" height="34"/>
+                                <rect key="frame" x="20" y="382" width="388" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Salasana" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zdF-kA-CfX">
-                                <rect key="frame" x="20" y="438" width="390" height="34"/>
+                                <rect key="frame" x="20" y="426" width="388" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GyB-iH-Guw">
-                                <rect key="frame" x="133" y="512" width="160" height="34.666666666666629"/>
+                                <rect key="frame" x="133" y="500.00000000000006" width="158" height="34.666666666666686"/>
                                 <color key="backgroundColor" red="0.32240044741436957" green="0.93039599333283662" blue="0.15462126025050868" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <rect key="contentStretch" x="0.10000000000000001" y="0.0" width="0.80000000000000004" height="1"/>
                                 <size key="titleShadowOffset" width="4" height="4"/>
@@ -92,39 +91,23 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="NuorisoKortti" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmB-sB-U4q">
-                                <rect key="frame" x="146" y="830" width="139" height="48"/>
-                                <color key="backgroundColor" name="AccentColor"/>
-                                <rect key="contentStretch" x="0.90000000000000002" y="1" width="0.84999999999999998" height="0.0"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Näytä Kortti">
-                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="Kirjaudu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="50g-DE-lq8"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="askolaLogo" translatesAutoresizingMaskIntoConstraints="NO" id="rfK-vV-M80">
-                                <rect key="frame" x="20" y="99" width="390" height="143"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" image="askolaLogo" translatesAutoresizingMaskIntoConstraints="NO" id="rfK-vV-M80">
+                                <rect key="frame" x="20" y="99" width="388" height="58"/>
+                                <edgeInsets key="layoutMargins" top="0.0" left="10" bottom="0.0" right="10"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHm-xM-odb">
-                                <rect key="frame" x="20" y="287.66666666666669" width="390" height="42"/>
+                                <rect key="frame" x="20" y="205.66666666666666" width="388" height="42"/>
                                 <color key="backgroundColor" red="0.96632045509999998" green="0.91914147140000002" blue="0.30568072200000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJr-e6-EHj">
-                                <rect key="frame" x="20" y="716" width="390" height="42"/>
+                                <rect key="frame" x="20" y="638" width="388" height="42"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Label">
@@ -142,11 +125,8 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nuoriso Kortti" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3e-PA-gz7">
-                                <rect key="frame" x="20" y="246.99999999999997" width="390" height="40.666666666666657"/>
+                                <rect key="frame" x="20" y="157" width="388" height="48.666666666666657"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="380" id="mPG-9w-Pt0"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -157,58 +137,55 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="200" verticalCompressionResistancePriority="200" ambiguous="YES" misplaced="YES" image="iloinenAskolaa" translatesAutoresizingMaskIntoConstraints="NO" id="3d3-SG-3Cn">
-                                <rect key="frame" x="20" y="512" width="196" height="183"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="ukkkoKuvapieni" translatesAutoresizingMaskIntoConstraints="NO" id="sb4-Sb-d6b">
+                                <rect key="frame" x="20" y="252" width="388" height="386"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.65723705290000001" green="0.15654805299999999" blue="0.21959719059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="jmB-sB-U4q" firstAttribute="top" secondItem="oJr-e6-EHj" secondAttribute="bottom" constant="108" id="1P0-Yu-6Fc"/>
-                            <constraint firstItem="jmB-sB-U4q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="146" id="23b-08-vzE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sb4-Sb-d6b" secondAttribute="trailing" constant="20" id="2MY-10-sSj"/>
                             <constraint firstItem="eHm-xM-odb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="3nf-AC-Bab"/>
-                            <constraint firstItem="eHm-xM-odb" firstAttribute="top" secondItem="T3e-PA-gz7" secondAttribute="bottom" constant="8" symbolic="YES" id="6Js-hD-tOg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jmB-sB-U4q" secondAttribute="trailing" constant="135" id="8b3-eE-SRi"/>
-                            <constraint firstItem="eHm-xM-odb" firstAttribute="top" secondItem="T3e-PA-gz7" secondAttribute="bottom" id="9Zm-8U-KBs"/>
+                            <constraint firstItem="sb4-Sb-d6b" firstAttribute="top" secondItem="eHm-xM-odb" secondAttribute="bottom" id="5UW-Zh-Ket"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sb4-Sb-d6b" secondAttribute="bottom" constant="254" id="9ze-jo-9LP"/>
+                            <constraint firstItem="eHm-xM-odb" firstAttribute="top" secondItem="T3e-PA-gz7" secondAttribute="bottom" id="Aoz-Hh-dkN"/>
                             <constraint firstItem="eHm-xM-odb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="CD1-W7-2LN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eHm-xM-odb" secondAttribute="trailing" constant="20" id="CZb-vl-98S"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oJr-e6-EHj" secondAttribute="trailing" constant="29" id="FS7-xK-e9y"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oJr-e6-EHj" secondAttribute="bottom" constant="140" id="FtI-dW-hKn"/>
                             <constraint firstItem="eHm-xM-odb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="GNF-Lk-bLN"/>
-                            <constraint firstItem="eHm-xM-odb" firstAttribute="top" secondItem="T3e-PA-gz7" secondAttribute="bottom" constant="8" symbolic="YES" id="KEs-TJ-7oB"/>
-                            <constraint firstItem="T3e-PA-gz7" firstAttribute="top" secondItem="rfK-vV-M80" secondAttribute="bottom" constant="5" id="MxG-VS-jsi"/>
+                            <constraint firstItem="rfK-vV-M80" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="54" id="JX0-bn-AXQ"/>
+                            <constraint firstItem="sb4-Sb-d6b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Jyn-eV-0Iz"/>
+                            <constraint firstItem="sb4-Sb-d6b" firstAttribute="top" secondItem="rfK-vV-M80" secondAttribute="bottom" constant="95" id="NOq-bR-MNK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="T3e-PA-gz7" secondAttribute="trailing" constant="20" id="NTf-pM-yjO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oJr-e6-EHj" secondAttribute="trailing" constant="35" id="NsP-PM-QjS"/>
-                            <constraint firstItem="3d3-SG-3Cn" firstAttribute="top" secondItem="eHm-xM-odb" secondAttribute="bottom" constant="174" id="O4w-fO-5rC"/>
-                            <constraint firstItem="rfK-vV-M80" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="S10-tL-CkB"/>
+                            <constraint firstItem="rfK-vV-M80" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="52" id="Qa1-Eg-i9g"/>
+                            <constraint firstItem="T3e-PA-gz7" firstAttribute="top" secondItem="rfK-vV-M80" secondAttribute="bottom" constant="8" id="QrD-XY-xns"/>
+                            <constraint firstItem="T3e-PA-gz7" firstAttribute="top" secondItem="rfK-vV-M80" secondAttribute="bottom" id="SiN-Vr-tMo"/>
                             <constraint firstItem="oJr-e6-EHj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Tey-iG-BZY"/>
-                            <constraint firstItem="oJr-e6-EHj" firstAttribute="top" secondItem="3d3-SG-3Cn" secondAttribute="bottom" constant="22" id="dB2-ik-zIr"/>
-                            <constraint firstItem="eHm-xM-odb" firstAttribute="top" secondItem="T3e-PA-gz7" secondAttribute="bottom" id="daw-sR-K0z"/>
+                            <constraint firstItem="eHm-xM-odb" firstAttribute="top" secondItem="T3e-PA-gz7" secondAttribute="bottom" constant="8" symbolic="YES" id="ZRT-01-QD6"/>
                             <constraint firstItem="eHm-xM-odb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="djD-8D-CmD"/>
                             <constraint firstItem="eHm-xM-odb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dqx-Rb-1vc"/>
-                            <constraint firstItem="rfK-vV-M80" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="dwL-Rl-5OX"/>
-                            <constraint firstItem="T3e-PA-gz7" firstAttribute="top" secondItem="rfK-vV-M80" secondAttribute="bottom" id="gOn-4e-V6F"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jmB-sB-U4q" secondAttribute="bottom" constant="15" id="gRT-vW-5Tn"/>
-                            <constraint firstItem="oJr-e6-EHj" firstAttribute="top" secondItem="3d3-SG-3Cn" secondAttribute="bottom" constant="22" id="imn-za-GCF"/>
-                            <constraint firstItem="jmB-sB-U4q" firstAttribute="top" secondItem="oJr-e6-EHj" secondAttribute="bottom" constant="90" id="izE-o8-niT"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jmB-sB-U4q" secondAttribute="bottom" constant="20" id="lLI-gT-alA"/>
-                            <constraint firstItem="rfK-vV-M80" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="nZU-dN-fhf"/>
+                            <constraint firstItem="sb4-Sb-d6b" firstAttribute="top" secondItem="eHm-xM-odb" secondAttribute="bottom" constant="4.3300000000000001" id="ex2-LR-SnM"/>
+                            <constraint firstItem="oJr-e6-EHj" firstAttribute="top" secondItem="sb4-Sb-d6b" secondAttribute="bottom" id="k9q-VW-YER"/>
+                            <constraint firstItem="sb4-Sb-d6b" firstAttribute="top" secondItem="T3e-PA-gz7" secondAttribute="bottom" constant="46.329999999999998" id="mJ2-D8-4Bf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oJr-e6-EHj" secondAttribute="bottom" constant="212" id="ngU-kR-ufb"/>
+                            <constraint firstItem="T3e-PA-gz7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="110" id="or1-31-GYP"/>
+                            <constraint firstItem="eHm-xM-odb" firstAttribute="top" secondItem="T3e-PA-gz7" secondAttribute="bottom" id="sVL-fb-EN6"/>
                             <constraint firstItem="T3e-PA-gz7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="scs-gp-iec"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rfK-vV-M80" secondAttribute="trailing" constant="20" id="tV2-3t-W0E"/>
-                            <constraint firstItem="jmB-sB-U4q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="135" id="uj8-3n-0tf"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jmB-sB-U4q" secondAttribute="trailing" constant="145" id="waL-3i-Mb1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oJr-e6-EHj" secondAttribute="trailing" constant="20" id="zbN-9x-YkA"/>
                         </constraints>
                         <edgeInsets key="layoutMargins" top="0.0" left="20" bottom="0.0" right="20"/>
                     </view>
                     <connections>
-                        <outlet property="iloinenAskolaa" destination="3d3-SG-3Cn" id="d0J-hz-MlB"/>
                         <outlet property="loginLbl" destination="oJr-e6-EHj" id="0YF-21-8Kz"/>
                         <outlet property="passwordLbl" destination="eHm-xM-odb" id="dpa-Nm-dTM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1451.1627906976744" y="3.8626609442060089"/>
+            <point key="canvasLocation" x="1450.9345794392523" y="3.2397408207343417"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NTJ-jc-Is0">
@@ -216,7 +193,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cNi-R0-Bre" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="buv-pK-GIG">
-                        <rect key="frame" x="0.0" y="59" width="430" height="44"/>
+                        <rect key="frame" x="0.0" y="47" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" systemColor="systemBackgroundColor"/>
                     </navigationBar>
@@ -235,10 +212,7 @@
     </scenes>
     <resources>
         <image name="askolaLogo" width="352" height="143"/>
-        <image name="iloinenAskolaa" width="991" height="946"/>
-        <namedColor name="AccentColor">
-            <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <image name="ukkkoKuvapieni" width="370" height="400"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
