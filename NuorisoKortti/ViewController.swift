@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 
 class ViewController: UIViewController {
@@ -13,12 +14,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordLbl: UILabel!
     @IBOutlet weak var loginLbl: UILabel!
     var username = ""
+    var etunimi = ""
+    var sukunimi = ""
     var password = ""
-    override func viewDidLoad() {
+        override func viewDidLoad() {
         super.viewDidLoad()
         loginLbl.text = username
-        passwordLbl.text = password
-        guard let url = URL(string: "http://localhost:8888/test/index3.php?login=\(username)&password=12345") else {return}
+        
+        guard let url = URL(string: "http://localhost:8888/test/index4.php?login=\(username)&password=12345") else {return}
         
         URLSession.shared.dataTask(with: url){data, response, error in
             if let error = error
@@ -30,8 +33,12 @@ class ViewController: UIViewController {
 
             do
             {
-                let users = try JSONDecoder().decode([User].self, from: data)
-                self.username = (users.first?.Salasana)!
+                let users = try JSONDecoder().decode([User2].self, from: data)
+                self.etunimi = (users.first?.Etunimi)!
+                self.sukunimi = (users.first?.Sukunimi)!
+                self.passwordLbl.text = self.sukunimi
+                self.loginLbl.text = self.etunimi
+
             }
             catch
             {
@@ -47,7 +54,6 @@ class ViewController: UIViewController {
     
 
     
-    
     func kirjaudu(img: UIImageView, button: UIButton)
     {
         if button.currentTitle != "Näytä Kortti"
@@ -58,12 +64,13 @@ class ViewController: UIViewController {
         }
         else
         {
-            button.setTitle(username, for: .normal)
+            button.setTitle("\(username) \(sukunimi) ", for: .normal)
             button.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
             img.isHidden = false
             
         }
     }
+    
     
     @IBAction func Kirjaudu(_ sender: UIButton)
     {
