@@ -18,39 +18,41 @@ class ViewController: UIViewController {
     var sukunimi = ""
     var puhelin = ""
     var password = ""
+    var image = ""
     
         override func viewDidLoad() {
         super.viewDidLoad()
         loginLbl.text = username
-        
-        guard let url = URL(string: "http://localhost:8888/test/index4.php?login=\(username)&password=12345") else {return}
+ 
+        guard let url = URL(string: "http://192.168.10.197:8888/test/index4.php?login=\(username)&password=12345") else {return}
         
         URLSession.shared.dataTask(with: url){data, response, error in
-            if let error = error
-            {
-                print(error)
-                return
-            }
+            if let error = error{return}
+            
             guard let data = data else {return}
-
             do
             {
-                let users = try JSONDecoder().decode([User2].self, from: data)
-                self.etunimi = (users.first?.Etunimi)!
-                self.sukunimi = (users.first?.Sukunimi)!
-                self.puhelin = (users.first?.Puhelinnumero)!
+                let users = try JSONDecoder().decode(User2.self, from: data)
+                self.etunimi = (users.Etunimi)!
+                self.sukunimi = (users.Sukunimi)!
+                self.puhelin = (users.Puhelinnumero)!
+//                self.image = (users.image)!
                 self.passwordLbl.text = "Nimi :\(self.sukunimi) \(self.etunimi)"
                 self.loginLbl.text = "Puhelin : \(self.puhelin)"
+                print(self.image)
+                guard let stringData = Data(base64Encoded: self.image),
+                      let uiImage = UIImage(data: stringData) else {
+                          print("Error: couldn't create UIImage")
+                          return
+                      }
 
             }
             catch
             {
-                print(error)
+            let LG = self.storyboard?.instantiateViewController(withIdentifier:"LoginNewViewController")
+                self.navigationController?.pushViewController(LG!, animated: false)
             }
-           
         }.resume()
-        
-        
     }
     
     @IBOutlet weak var iloinenAskolaa: UIImageView!
