@@ -14,24 +14,55 @@ class LoginNewViewController: UIViewController {
     private var pasword = ""
     let MyConnectionClass = ConnectionToServer()
     
+    
+
 
     @IBOutlet weak var logintxt: UITextField!
-    var loggedIn: Bool = false
+    @IBOutlet weak var NappiKirjaudu: UIButton!
+    
+    
+//Login ruutun tarkistus
+    @IBAction func logintxtChanged(_ sender: Any) {
+        let len = 9
+        let nappi = validationToButton(text: logintxt.text!, lengh: len)
+        if (nappi)
+        {
+            NappiKirjaudu.isEnabled = true
+            self.MyConnectionClass.getCard(_username: self.logintxt.text!)
+        }
+    }
+    
+//    Main
+    
     @IBOutlet weak var passworTxt: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        NappiKirjaudu.isEnabled = false
+        
         }
     
     
+//  Teksitn Pituuden tarkistu
+    func validationToButton(text: String, lengh: Int)-> Bool
+    {
+        if(text.count > lengh)
+        {
+         return true
+        }
+        return false
+    }
+    
+//    Nappi Painaminen
     @IBAction func nappiLogin(_ sender: UIButton)
     {
+
         self.MyConnectionClass.makeConnection(_userName: self.logintxt.text!, _password: self.passworTxt.text!)
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "CardViewController") as! CardViewController
         vc.etunimi = self.logintxt.text!
+        vc.aktiv = MyConnectionClass.aktivoitu
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
-
 
 
 
