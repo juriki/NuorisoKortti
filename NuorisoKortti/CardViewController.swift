@@ -19,8 +19,10 @@ class CardViewController: UIViewController {
     @IBOutlet weak var KuvaView: UIImageView!
     let MyConnectionClass = ConnectionToServer()
     
-    var etunimi = ""
+    var etunimisukunimi = ""
+    var puhelin = ""
     var aktiv: Bool = false
+    var kuvauslupa = ""
     
     override func viewDidLoad()
     {
@@ -35,18 +37,26 @@ class CardViewController: UIViewController {
         shadow?.layer.borderWidth = 1
         BlockView.layer.zPosition = 1
         
-        self.NimiSukunimiLabel.text = "\(MyConnectionClass.etunimi)  \(MyConnectionClass.sukunimi)"
-        self.PuhelinLabel.text = "Puhelin : \(MyConnectionClass.puhelin)"
+        self.NimiSukunimiLabel.text = "\(etunimisukunimi)"
+        self.PuhelinLabel.text = "Puhelin : \(puhelin)"
         let nyt = Date()
         self.TanaanOnLabel.text = nyt.formatted()
         if(aktiv)
         {
             BlockView.layer.zPosition = -1
         }
+        if(kuvauslupa == "1")
+        {
+            SaaOttaKuvaLabel.text = "Nuoresta saa otta kuva"
+        }else
+        {
+            SaaOttaKuvaLabel.text = "Nuoresta Ei saa otta kuva"
+
+        }
     }
     
     override func reloadInputViews() {
-        self.MyConnectionClass.getCard(_username: self.etunimi)
+//        self.MyConnectionClass.getCard(_username: self.etunimi)
         let shadow = StakkiView
         shadow?.layer.shadowColor = UIColor.black.cgColor
         shadow?.layer.shadowOpacity = 1

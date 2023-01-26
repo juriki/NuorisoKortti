@@ -13,28 +13,46 @@ class LoginNewViewController: UIViewController {
     private var username = ""
     private var pasword = ""
     let MyConnectionClass = ConnectionToServer()
+    let MyPasswordClass = ConnectionToServer()
     
-    
-
-
     @IBOutlet weak var logintxt: UITextField!
     @IBOutlet weak var NappiKirjaudu: UIButton!
+    @IBOutlet weak var passworTxt: UITextField!
     
-    
+
 //Login ruutun tarkistus
-    @IBAction func logintxtChanged(_ sender: Any) {
-        let len = 9
-        let nappi = validationToButton(text: logintxt.text!, lengh: len)
-        if (nappi)
+    @IBAction func logintxtChanged(_ sender: Any)
+    {
+        if(passworTxt.text!.count >= 8 && logintxt.text!.count >= 4)
         {
             NappiKirjaudu.isEnabled = true
+            self.MyPasswordClass.makeConnection(_userName: self.logintxt.text!, _password: self.passworTxt.text!)
             self.MyConnectionClass.getCard(_username: self.logintxt.text!)
+        }
+        else
+        {
+            NappiKirjaudu.isEnabled = false
         }
     }
     
-//    Main
     
-    @IBOutlet weak var passworTxt: UITextField!
+    @IBAction func passwordChanged(_ sender: Any) {
+        if(passworTxt.text!.count >= 8 && logintxt.text!.count >= 4)
+        {
+            NappiKirjaudu.isEnabled = true
+            self.MyPasswordClass.makeConnection(_userName: self.logintxt.text!, _password: self.passworTxt.text!)
+            self.MyConnectionClass.getCard(_username: self.logintxt.text!)
+        }
+        else
+        {
+            NappiKirjaudu.isEnabled = false
+        }
+
+        }
+    
+    
+//    Main
+
     override func viewDidLoad() {
         super.viewDidLoad()
         NappiKirjaudu.isEnabled = false
@@ -42,25 +60,35 @@ class LoginNewViewController: UIViewController {
         }
     
     
-//  Teksitn Pituuden tarkistu
-    func validationToButton(text: String, lengh: Int)-> Bool
-    {
-        if(text.count > lengh)
-        {
-         return true
-        }
-        return false
-    }
     
 //    Nappi Painaminen
     @IBAction func nappiLogin(_ sender: UIButton)
     {
-
-        self.MyConnectionClass.makeConnection(_userName: self.logintxt.text!, _password: self.passworTxt.text!)
+        var huomio =  MyConnectionClass.username
+        if(huomio == "")
+        {
+            huomio = MyPasswordClass.password
+        }
+        let allert = UIAlertController(title: "VÄÄRÄ", message: huomio, preferredStyle: .alert)
+        allert.addAction(UIAlertAction(title: "OK", style: .cancel, handler:{action in
+            print("dismis")
+            
+        }))
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "CardViewController") as! CardViewController
-        vc.etunimi = self.logintxt.text!
-        vc.aktiv = MyConnectionClass.aktivoitu
-        self.navigationController?.pushViewController(vc, animated: true)
+        if(MyPasswordClass.islogged)
+        {
+            vc.aktiv = MyConnectionClass.aktivoitu
+            vc.etunimisukunimi = " \(MyConnectionClass.etunimi) \(MyConnectionClass.sukunimi)"
+            vc.puhelin = MyConnectionClass.puhelin
+            vc.kuvauslupa = MyConnectionClass.kuvalupa
+            self.MyConnectionClass.getCard(_username: self.logintxt.text!)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        else
+        {
+            present(allert, animated: true)
+        }
+        
     }
 }
 
