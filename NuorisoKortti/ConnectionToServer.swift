@@ -47,6 +47,13 @@ class ConnectionToServer: UIViewController
                 }
                 catch
                 {
+                    self!.islogged = false
+                    self!.etunimi = ""
+                    self!.sukunimi = ""
+                    self!.puhelin = ""
+                    self!.voimassa = ""
+                    self!.kuvalupa = ""
+                    self!.username = ""
                     self!.password = "Salasana on väärin"
                 }
             }
@@ -58,7 +65,7 @@ class ConnectionToServer: UIViewController
         guard let url = URL(string: "http://192.168.10.197:8888/test/index4.php?login=\(_username)") else {return}
         
         URLSession.shared.dataTask(with: url){data, response, error in
-            if error != nil{return}
+           if error != nil{return}
             guard let data = data else {return}
             do
             {
@@ -77,6 +84,13 @@ class ConnectionToServer: UIViewController
             }
             catch
             {
+                self.islogged = false
+                self.etunimi = ""
+                self.sukunimi = ""
+                self.puhelin = ""
+                self.voimassa = ""
+                self.kuvalupa = ""
+                self.username = ""
                 self.username = "Käyttäjänimi on väärin"
                 self.aktivoitu = false
             }

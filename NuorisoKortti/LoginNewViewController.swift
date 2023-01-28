@@ -18,7 +18,7 @@ class LoginNewViewController: UIViewController {
     @IBOutlet weak var logintxt: UITextField!
     @IBOutlet weak var NappiKirjaudu: UIButton!
     @IBOutlet weak var passworTxt: UITextField!
-    
+
 
 //Login ruutun tarkistus
     @IBAction func logintxtChanged(_ sender: Any)
@@ -56,7 +56,8 @@ class LoginNewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NappiKirjaudu.isEnabled = false
-        
+        logintxt.text = ""
+        passworTxt.text = ""
         }
     
     
@@ -69,7 +70,7 @@ class LoginNewViewController: UIViewController {
         {
             huomio = MyPasswordClass.password
         }
-        let allert = UIAlertController(title: "VÄÄRÄ", message: huomio, preferredStyle: .alert)
+        let allert = UIAlertController(title: "Huomio!", message: huomio, preferredStyle: .alert)
         allert.addAction(UIAlertAction(title: "OK", style: .cancel, handler:{action in
             print("dismis")
             
