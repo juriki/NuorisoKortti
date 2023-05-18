@@ -8,11 +8,26 @@
 import Foundation
 
 struct User: Decodable{
+//    Vanha tieto
+//    let KayttajaId: String?
+//    let Kayttajanimi: String?
+//    let Salasana: String?
+//    let Yllapito: String?
+//
     
-    let KayttajaId: String?
-    let Kayttajanimi: String?
-    let Salasana: String?
-    let Yllapito: String?
-    
+    let nuoriId: Int?
+    let etunimi: String?
+    let sukunimi: String?
+    let syntymaAika: String?
+    let puhelinnumero: String?
+    let osoite: String?
+    let huoltaja: Int?
+    let sposti: String?
+    let allergiat: String?
+    let kuvauslupa: Bool
+    let aktivointi: Bool
+    let kuva: String?
+    let kayttajanimi: String?
+
 }
 

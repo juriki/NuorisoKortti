@@ -14,6 +14,7 @@ class LoginNewViewController: UIViewController {
     private var pasword = ""
     let MyConnectionClass = ConnectionToServer()
     let MyPasswordClass = ConnectionToServer()
+
     
     @IBOutlet weak var logintxt: UITextField!
     @IBOutlet weak var NappiKirjaudu: UIButton!
@@ -82,6 +83,7 @@ class LoginNewViewController: UIViewController {
             vc.etunimisukunimi = " \(MyConnectionClass.etunimi) \(MyConnectionClass.sukunimi)"
             vc.puhelin = MyConnectionClass.puhelin
             vc.kuvauslupa = MyConnectionClass.kuvalupa
+            vc.kuvaBase64 = MyConnectionClass.image
             self.MyConnectionClass.getCard(_username: self.logintxt.text!)
             self.navigationController?.pushViewController(vc, animated: true)
         }

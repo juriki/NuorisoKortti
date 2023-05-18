@@ -21,8 +21,9 @@ class CardViewController: UIViewController {
     
     var etunimisukunimi = ""
     var puhelin = ""
+    var kuvaBase64 = ""
     var aktiv: Bool = false
-    var kuvauslupa = ""
+    var kuvauslupa = false
     
     override func viewDidLoad()
     {
@@ -36,8 +37,15 @@ class CardViewController: UIViewController {
         shadow?.layer.borderColor = UIColor.black.cgColor
         shadow?.layer.borderWidth = 1
         BlockView.layer.zPosition = 1
-
         
+//      Base64 converting to image here
+        if(kuvaBase64 != "")
+        {
+            let dataDecoded : Data = Data(base64Encoded: kuvaBase64, options: .ignoreUnknownCharacters)!
+            let decodedimage = UIImage(data: dataDecoded)
+            KuvaView.image = decodedimage
+            
+        }
         self.NimiSukunimiLabel.text = "\(etunimisukunimi)"
         self.PuhelinLabel.text = "Puhelin : \(puhelin)"
         let nyt = Date()
@@ -46,7 +54,7 @@ class CardViewController: UIViewController {
         {
             BlockView.layer.zPosition = -5
         }
-        if(kuvauslupa == "1")
+        if(kuvauslupa == true)
         {
             SaaOttaKuvaLabel.text = "Nuoresta saa otta kuva"
         }else
