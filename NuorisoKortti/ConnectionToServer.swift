@@ -56,7 +56,8 @@ class ConnectionToServer: UIViewController
                 }
                 catch
                 {
-                    self!.islogged = false
+//                    TODO debug  swich to false
+                    self!.islogged = true
                     self!.etunimi = ""
                     self!.sukunimi = ""
                     self!.puhelin = ""

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CardViewController: UIViewController {
+class CardViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var BlockView: UIStackView!
     @IBOutlet weak var StakkiView: UIStackView!
@@ -36,7 +36,7 @@ class CardViewController: UIViewController {
         shadow?.layer.cornerRadius = 10
         shadow?.layer.borderColor = UIColor.black.cgColor
         shadow?.layer.borderWidth = 1
-        BlockView.layer.zPosition = 1
+//        BlockView.layer.zPosition = 1
         
 //      Base64 converting to image here
         if(kuvaBase64 != "")
@@ -52,7 +52,7 @@ class CardViewController: UIViewController {
         self.TanaanOnLabel.text = nyt.formatted()
         if(aktiv)
         {
-            BlockView.layer.zPosition = -5
+//            BlockView.layer.zPosition = -5
         }
         if(kuvauslupa == true)
         {
@@ -64,5 +64,27 @@ class CardViewController: UIViewController {
         }
     }
 
+//   Kuva lisäys nappi ja tarvittavat funktiot alapulella
+    @IBAction func GalleryButton(_ sender: UIButton) {
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.delegate = self
+        vc.allowsEditing = true
+        present(vc, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")]as? UIImage
+        {
+            KuvaView.image = image
+//            TODO Täällä muutetan kuva tobase64 ja lehetetään se tietokantaan
+        }
+        picker.dismiss(animated: true, completion: nil)
+    }
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    
 }
-
