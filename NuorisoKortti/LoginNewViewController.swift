@@ -84,7 +84,7 @@ class LoginNewViewController: UIViewController {
             vc.puhelin = MyConnectionClass.puhelin
             vc.kuvauslupa = MyConnectionClass.kuvalupa
             vc.kuvaBase64 = MyConnectionClass.image
-            self.MyConnectionClass.getCard(_username: self.logintxt.text!)
+//            self.MyConnectionClass.getCard(_username: self.logintxt.text!)
             self.navigationController?.pushViewController(vc, animated: true)
         }
         else

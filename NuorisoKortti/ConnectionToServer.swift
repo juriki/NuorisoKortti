@@ -56,8 +56,7 @@ class ConnectionToServer: UIViewController
                 }
                 catch
                 {
-//                    TODO debug  swich to false
-                    self!.islogged = true
+                    self!.islogged = false
                     self!.etunimi = ""
                     self!.sukunimi = ""
                     self!.puhelin = ""
@@ -98,6 +97,7 @@ class ConnectionToServer: UIViewController
 //                    ?? default value
                     self.image = (users.first?.kuva ?? "")
                     self.kayttajanimi = (users.first?.kayttajanimi)!
+                    self.aktivoitu = true
                 }else
                 {
                     self.aktivoitu = false
@@ -112,6 +112,7 @@ class ConnectionToServer: UIViewController
             }
             catch
             {
+//                todo
                 self.islogged = false
                 self.etunimi = ""
                 self.sukunimi = ""

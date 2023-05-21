@@ -17,9 +17,9 @@ class CardViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var TanaanOnLabel: UILabel!
     @IBOutlet weak var SaaOttaKuvaLabel: UILabel!
     @IBOutlet weak var KuvaView: UIImageView!
-    let MyConnectionClass = ConnectionToServer()
+
     
-    var etunimisukunimi = ""
+    var etunimisukunimi = "Testi nimi"
     var puhelin = ""
     var kuvaBase64 = ""
     var aktiv: Bool = false

@@ -21,6 +21,7 @@
 		8E4FEE81296703C500B2A8BF /* LoginNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4FEE80296703C500B2A8BF /* LoginNewViewController.swift */; };
 		8E4FEEC0296BF9FF00B2A8BF /* Model2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4FEEBF296BF9FF00B2A8BF /* Model2.swift */; };
 		8E58387529769EC000004638 /* ConnectionClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E58387429769EC000004638 /* ConnectionClass.swift */; };
+		8E5F4DC62A18C45A00B85941 /* SecondCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F4DC52A18C45A00B85941 /* SecondCarViewController.swift */; };
 		8E60E3FF29CE18E700C27B42 /* Model3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E60E3FE29CE18E700C27B42 /* Model3.swift */; };
 		8E8E66232965832E009104C0 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E66222965832E009104C0 /* Model.swift */; };
 		8EC50481297AAFB20031505A /* ConnectionToServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC50480297AAFB20031505A /* ConnectionToServer.swift */; };
@@ -61,6 +62,7 @@
 		8E4FEE80296703C500B2A8BF /* LoginNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNewViewController.swift; sourceTree = "<group>"; };
 		8E4FEEBF296BF9FF00B2A8BF /* Model2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model2.swift; sourceTree = "<group>"; };
 		8E58387429769EC000004638 /* ConnectionClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionClass.swift; sourceTree = "<group>"; };
+		8E5F4DC52A18C45A00B85941 /* SecondCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCarViewController.swift; sourceTree = "<group>"; };
 		8E60E3FE29CE18E700C27B42 /* Model3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model3.swift; sourceTree = "<group>"; };
 		8E8E66222965832E009104C0 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		8EC50480297AAFB20031505A /* ConnectionToServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionToServer.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				8E4CA1622923760C00D06651 /* AppDelegate.swift */,
 				8E4CA1642923760C00D06651 /* SceneDelegate.swift */,
 				8E4CA1682923760C00D06651 /* Main.storyboard */,
+				8E5F4DC52A18C45A00B85941 /* SecondCarViewController.swift */,
 				8E4CA16B2923760F00D06651 /* Assets.xcassets */,
 				8E4CA16D2923760F00D06651 /* LaunchScreen.storyboard */,
 				8E4CA1702923760F00D06651 /* Info.plist */,
@@ -292,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E58387529769EC000004638 /* ConnectionClass.swift in Sources */,
+				8E5F4DC62A18C45A00B85941 /* SecondCarViewController.swift in Sources */,
 				8E4FEEC0296BF9FF00B2A8BF /* Model2.swift in Sources */,
 				8E4CA1632923760C00D06651 /* AppDelegate.swift in Sources */,
 				8E4CA1652923760C00D06651 /* SceneDelegate.swift in Sources */,
