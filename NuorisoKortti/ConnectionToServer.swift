@@ -16,6 +16,7 @@ class ConnectionToServer: UIViewController
     public var password: String = ""
     public var islogged = false
     
+    var nuoriId: Int?
     var etunimi = ""
     var sukunimi = ""
     var kayttajanimi = ""
@@ -27,8 +28,7 @@ class ConnectionToServer: UIViewController
     
     func makeConnection(_userName: String, _password: String)
     {
-        let myTestUser = _userName
-        guard let url = URL(string: "https://nuorisomobile2023get.azurewebsites.net/api/employees?\(myTestUser)/\(_password)") else {return}
+        guard let url = URL(string: "https://nuorisomobile2023get.azurewebsites.net/api/employees?\(_userName)/\(_password)") else {return}
         URLSession.shared.dataTask(with: url){[weak self] (data, response, error) in
             if error != nil
             {return}
@@ -57,19 +57,22 @@ class ConnectionToServer: UIViewController
                 catch
                 {
                     self!.islogged = false
-                    self!.etunimi = ""
-                    self!.sukunimi = ""
-                    self!.puhelin = ""
+//                    self!.etunimi = ""
+//                    self!.sukunimi = ""
+//                    self!.puhelin = ""
                     self!.voimassa = false
-                    self!.kuvalupa = false
-                    self!.username = ""
+//                    self!.kuvalupa = false
+//                    self!.username = ""
                     self!.password = "Tarkista Salasana"
-                    print(error)
                 }
             }
         }.resume()
     }
-//    juriatokvina
+    
+    
+    
+    
+    
     func getCard(_username: String)
     {
         guard let url = URL(string: "https://nuorisomobile2023get.azurewebsites.net/api/WorkAssigments?\(_username)") else {return}
@@ -79,7 +82,6 @@ class ConnectionToServer: UIViewController
             guard let data = data else {return}
             do
             {
-//                2007-03-02T00:00:0
                 let decode = JSONDecoder()
                 let dateFormater = DateFormatter()
                 dateFormater.dateFormat = "YYYY-MM-dd"
@@ -88,13 +90,13 @@ class ConnectionToServer: UIViewController
                 let users = try JSONDecoder().decode([User].self, from: data)
                 if(data.count > 5)
                 {
+                    self.nuoriId = (users.first?.nuoriId)!
                     self.etunimi = (users.first?.etunimi)!
                     self.sukunimi = (users.first?.sukunimi)!
                     self.puhelin = (users.first?.puhelinnumero)!
                     self.voimassa = (users.first?.aktivointi)!
                     self.aktivoitu  = (users.first?.aktivointi)!
                     self.kuvalupa = (users.first?.kuvauslupa)!
-//                    ?? default value
                     self.image = (users.first?.kuva ?? "")
                     self.kayttajanimi = (users.first?.kayttajanimi)!
                     self.aktivoitu = true
@@ -104,11 +106,11 @@ class ConnectionToServer: UIViewController
                     self.islogged = false
                     self.username = "Tarkista Käyttäjänimi"
                 }
-//  Funkito DispatchQueue.main.async anna päivittä tiedot näyttöllä
-                if(self.voimassa == true)
-                {
-                    self.aktivoitu = true
-                }
+////  Funkito DispatchQueue.main.async anna päivittä tiedot näyttöllä
+//                if(self.voimassa == true)
+//                {
+//                    self.aktivoitu = true
+//                }
             }
             catch
             {
