@@ -24,6 +24,7 @@ class nuoriTallenusPaikka: UIViewController
         print("Tallennetan" + key, " Value " )
     }
     
+//    tarkistus funkito
     
     func tarkista(key: String)-> String
     {
@@ -32,6 +33,22 @@ class nuoriTallenusPaikka: UIViewController
         return myData
     }
     
+    func vaihdaYksi(key: String, data: String)
+    {
+        guard let myData = UserDefaults.standard.string(forKey: key) else {return}
+        
+        if(myData != data)
+        {
+            UserDefaults.standard.removeObject(forKey: key)
+            print("Tiedot " + key + " Poistettu")
+            UserDefaults.standard.set(data, forKey: key)
+            print("Tallennetan" + key, " Value " )
+        }else
+        {
+            print("Mitään ei ole vaihdettu")
+        }
+
+        }
     
     func poista()
         {
@@ -39,6 +56,7 @@ class nuoriTallenusPaikka: UIViewController
             {
                 UserDefaults.standard.removeObject(forKey: key)
                 print("Tiedot " + key + " Poistettu")
+            
             }
         }
 

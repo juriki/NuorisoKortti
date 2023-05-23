@@ -33,16 +33,23 @@ class SecondCarViewController: UIViewController {
         shadow?.layer.borderColor = UIColor.black.cgColor
         shadow?.layer.borderWidth = 1
         
+        
+        let shadow1 = NuoriId
+        shadow1?.layer.cornerRadius = 10
+
+
+
+        
         Nimi.text = "Nimi : " + tallennusPaikka.tarkista(key: "Etunimi") + " " + tallennusPaikka.tarkista(key: "Sukunimi")
         Puhelinnumero.text = "Puhelinnumero : " + tallennusPaikka.tarkista(key: "Puhelinnumero")
         Kayttajanimi.text = "Käyttäjänimi " + tallennusPaikka.tarkista(key: "Kayttajanimi")
         Sahkopisti.text = "Sähköposti : " + tallennusPaikka.tarkista(key: "Sähköposti")
-//        SyntymaAika.text = tallennusPaikka.tarkista(key: "Etunimi")
-        Allergiat.text = "Allergiat" + tallennusPaikka.tarkista(key: "Allergiat")
+        SyntymaAika.text = "Syntymä aika : " + tallennusPaikka.tarkista(key: "SyntymäAika")
+        Allergiat.text = "Allergiat : " + tallennusPaikka.tarkista(key: "Allergiat")
         Osoite.text = "Osoite: " + tallennusPaikka.tarkista(key: "Osoite")
         NuoriId.text = "Nuori ID: " + String(tallennusPaikka.tarkista(key: "NuoriID"))
     }
     
 
-
+ 
 }

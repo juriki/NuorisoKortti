@@ -59,6 +59,7 @@ class CardViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         self.NimiSukunimiLabel.text = "Nimi : " + tallennusPaikka.tarkista(key: "Etunimi") + " " + tallennusPaikka.tarkista(key: "Sukunimi")
         self.PuhelinLabel.text = "Puhelin numero : " + tallennusPaikka.tarkista(key: "Puhelinnumero")
         let nyt = Date()
+        self.nuoriID = Int(tallennusPaikka.tarkista(key: "NuoriID"))
         self.TanaanOnLabel.text = nyt.formatted()
         
         if(tallennusPaikka.tarkista(key: "Kuvauslupa") == "1")
@@ -88,10 +89,18 @@ class CardViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             KuvaView.image = image
             let imageData = image.jpegData(compressionQuality: 1)
             imagesourceCode = imageData?.base64EncodedString()
+//            Tallennetan kuva myös sisäiseen muistin
+            tallennusPaikka.vaihdaYksi(key: "Kuva", data: imagesourceCode ?? "")
             
 //            Lähetetään kuva backendin
             guard let url = URL(string: "https://nuorisomobile2023get.azurewebsites.net/api/WorkAssigments?") else {return}
-            let parametrs = ["NuoriID": nuoriID as Any, "Etunimi":"juri", "Sukunimi":"juri", "Puhelinnumero":"0451386070", "Osoite":"tieaskolan 3","Kuva": imagesourceCode ?? "","Kayttajanimi": "jurijuri"] as [String : Any]
+            let parametrs = ["NuoriID": nuoriID as Any,
+                             "Etunimi":"juri", "Sukunimi":"juri",
+                             "Puhelinnumero":"0451386070",
+                             "Osoite":"tieaskolan 3",
+                             "Kuva": imagesourceCode ?? "",
+                             "Kayttajanimi": "jurijuri"] as [String : Any]
+            
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
