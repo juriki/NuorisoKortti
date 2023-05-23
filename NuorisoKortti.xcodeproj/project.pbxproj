@@ -28,6 +28,7 @@
 		8ECDA5562A1AA66900321893 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECDA5552A1AA66900321893 /* TabBarController.swift */; };
 		8ECDA5582A1AAAB100321893 /* CardViewNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECDA5572A1AAAB100321893 /* CardViewNavigationController.swift */; };
 		8ECDA55A2A1BF45F00321893 /* kayttajaTiedot.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8ECDA5592A1BF45F00321893 /* kayttajaTiedot.txt */; };
+		8ECDA55C2A1C8B3200321893 /* nuoriTallenusPaikka.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECDA55B2A1C8B3200321893 /* nuoriTallenusPaikka.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		8ECDA5552A1AA66900321893 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		8ECDA5572A1AAAB100321893 /* CardViewNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewNavigationController.swift; sourceTree = "<group>"; };
 		8ECDA5592A1BF45F00321893 /* kayttajaTiedot.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = kayttajaTiedot.txt; sourceTree = "<group>"; };
+		8ECDA55B2A1C8B3200321893 /* nuoriTallenusPaikka.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nuoriTallenusPaikka.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				8E4CA1682923760C00D06651 /* Main.storyboard */,
 				8ECDA5552A1AA66900321893 /* TabBarController.swift */,
 				8E5F4DC52A18C45A00B85941 /* SecondCarViewController.swift */,
+				8ECDA55B2A1C8B3200321893 /* nuoriTallenusPaikka.swift */,
 				8E4CA16B2923760F00D06651 /* Assets.xcassets */,
 				8E4CA16D2923760F00D06651 /* LaunchScreen.storyboard */,
 				8E4CA1702923760F00D06651 /* Info.plist */,
@@ -303,6 +306,7 @@
 			files = (
 				8E5F4DC62A18C45A00B85941 /* SecondCarViewController.swift in Sources */,
 				8ECDA5562A1AA66900321893 /* TabBarController.swift in Sources */,
+				8ECDA55C2A1C8B3200321893 /* nuoriTallenusPaikka.swift in Sources */,
 				8E4FEEC0296BF9FF00B2A8BF /* Model2.swift in Sources */,
 				8E4CA1632923760C00D06651 /* AppDelegate.swift in Sources */,
 				8E4CA1652923760C00D06651 /* SceneDelegate.swift in Sources */,

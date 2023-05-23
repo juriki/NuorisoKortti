@@ -14,6 +14,7 @@ class LoginNewViewController: UIViewController {
     private var pasword = ""
     let MyConnectionClass = ConnectionToServer()
     let MyPasswordClass = ConnectionToServer()
+    let tallennusPaikka = nuoriTallenusPaikka()
 
 
     @IBOutlet weak var logintxt: UITextField!
@@ -26,6 +27,7 @@ class LoginNewViewController: UIViewController {
 //Login ruutun tarkistus
     @IBAction func logintxtChanged(_ sender: Any)
     {
+        
 
         if(passworTxt.text!.count >= 8 && logintxt.text!.count >= 4)
         {
@@ -61,11 +63,16 @@ class LoginNewViewController: UIViewController {
     
 //    Main
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
+        
+        if(tallennusPaikka.tarkista(key: "Etunimi") != "Error")
+        {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "CardViewController") as! CardViewController
+            self.navigationController?.pushViewController(vc, animated: false)
+        }
         NappiKirjaudu.isEnabled = false
-        logintxt.text = ""
-        passworTxt.text = ""
         }
     
     
@@ -88,16 +95,18 @@ class LoginNewViewController: UIViewController {
 //        tällä vc muuttuja lähettä tiedot seuravaan näyttöön
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "CardViewController") as! CardViewController
 
-//        let vc2 = self.storyboard?.instantiateViewController(withIdentifier: "SecondCarViewController") as! SecondCarViewController
         if(MyPasswordClass.islogged)
         {
-            vc.nuoriID = MyConnectionClass.nuoriId
-//            vc2.nimi = "PIZDEC" 
-            vc.aktiv = MyConnectionClass.aktivoitu
-            vc.etunimisukunimi = " \(MyConnectionClass.etunimi) \(MyConnectionClass.sukunimi)"
-            vc.puhelin = MyConnectionClass.puhelin
-            vc.kuvauslupa = MyConnectionClass.kuvalupa
-            vc.kuvaBase64 = MyConnectionClass.image
+            vc.userAlldata = MyConnectionClass.userAllData
+//            Alustetaan Käyttäjän muisti
+            tallennusPaikka.poista()
+            
+//            Tellennetaan tiedot  Käyttäjään muistin
+            for userAld in MyConnectionClass.userAllData
+            {
+                tallennusPaikka.save(key: userAld.key, data: userAld.value)
+            }
+
             self.navigationController?.pushViewController(vc, animated: true)
         }
 //        Huomautus

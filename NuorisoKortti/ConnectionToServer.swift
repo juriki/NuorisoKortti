@@ -25,6 +25,8 @@ class ConnectionToServer: UIViewController
     var image = ""
     var kuvalupa: Bool = false
     var aktivoitu: Bool = false
+    var userAllData: [String:Any] = [:]
+
     
     func makeConnection(_userName: String, _password: String)
     {
@@ -51,7 +53,8 @@ class ConnectionToServer: UIViewController
                     {
                         self!.username = ""
                         self!.islogged = false
-                        self!.password = ""
+                        self!.password = "Tarkista Salasana"
+                        
                     }
                 }
                 catch
@@ -76,7 +79,7 @@ class ConnectionToServer: UIViewController
     func getCard(_username: String)
     {
         guard let url = URL(string: "https://nuorisomobile2023get.azurewebsites.net/api/WorkAssigments?\(_username)") else {return}
-        
+
         URLSession.shared.dataTask(with: url){[self]data, response, error in
            if error != nil{return}
             guard let data = data else {return}
@@ -100,17 +103,28 @@ class ConnectionToServer: UIViewController
                     self.image = (users.first?.kuva ?? "")
                     self.kayttajanimi = (users.first?.kayttajanimi)!
                     self.aktivoitu = true
+//     jos vaihdat joku avaimesta niin on myös vaihdettava nuoriTallenusPaikka luokassa
+                    userAllData = ["NuoriID": self.nuoriId as Any,
+                                     "Etunimi":self.etunimi,
+                                     "Sukunimi": self.sukunimi,
+                                     "SyntymäAika": users.first?.syntymaAika ?? "",
+                                     "Puhelinnumero": self.puhelin,
+                                     "Osoite": users.first?.osoite ??  "",
+                                     "Huoltaja": users.first?.huoltaja ?? 0,
+                                     "Sähköposti": users.first?.sposti ?? "",
+                                     "Allergiat": users.first?.allergiat ?? "",
+                                     "Kuvauslupa": users.first?.kuvauslupa ?? false,
+                                     "Aktivoitu": self.aktivoitu,
+                                     "Kuva": self.image,
+                                     "Kayttajanimi": self.kayttajanimi,
+                                     ] as [String : Any]
+
                 }else
                 {
                     self.aktivoitu = false
                     self.islogged = false
                     self.username = "Tarkista Käyttäjänimi"
                 }
-////  Funkito DispatchQueue.main.async anna päivittä tiedot näyttöllä
-//                if(self.voimassa == true)
-//                {
-//                    self.aktivoitu = true
-//                }
             }
             catch
             {

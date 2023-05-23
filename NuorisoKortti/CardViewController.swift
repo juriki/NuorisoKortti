@@ -18,7 +18,8 @@ class CardViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var SaaOttaKuvaLabel: UILabel!
     @IBOutlet weak var KuvaView: UIImageView!
     
-
+    let tallennusPaikka = nuoriTallenusPaikka()
+    var userAlldata: [String:Any] = [:]
     var nuoriID: Int?
     var kayttajaNimi = ""
     var osoite = "Osoite"
@@ -28,10 +29,15 @@ class CardViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     var aktiv: Bool = false
     var kuvauslupa = false
     var imagesourceCode : String?
+
+ 
+    
+    
     
 //   Main
     override func viewDidLoad()
     {
+//        Lisätän varjo stakkin
         super.viewDidLoad()
         let shadow = StakkiView
         shadow?.layer.shadowColor = UIColor.black.cgColor
@@ -42,22 +48,20 @@ class CardViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         shadow?.layer.borderColor = UIColor.black.cgColor
         shadow?.layer.borderWidth = 1
 
-
 //      Base64 converting to image here
-        if(kuvaBase64 != "")
+        if(tallennusPaikka.tarkista(key: "Kuva") != "")
         {
-            let dataDecoded : Data = Data(base64Encoded: kuvaBase64, options: .ignoreUnknownCharacters)!
+            let dataDecoded : Data = Data(base64Encoded: tallennusPaikka.tarkista(key: "Kuva"), options: .ignoreUnknownCharacters)!
             let decodedimage = UIImage(data: dataDecoded)
             KuvaView.image = decodedimage
             
         }
-        self.NimiSukunimiLabel.text = "Nimi : \(etunimisukunimi)"
-        self.PuhelinLabel.text = "Puhelin numero : \(puhelin)"
-        print(puhelin)
+        self.NimiSukunimiLabel.text = "Nimi : " + tallennusPaikka.tarkista(key: "Etunimi") + " " + tallennusPaikka.tarkista(key: "Sukunimi")
+        self.PuhelinLabel.text = "Puhelin numero : " + tallennusPaikka.tarkista(key: "Puhelinnumero")
         let nyt = Date()
         self.TanaanOnLabel.text = nyt.formatted()
         
-        if(kuvauslupa == true)
+        if(tallennusPaikka.tarkista(key: "Kuvauslupa") == "1")
         {
             SaaOttaKuvaLabel.text = "Nuoresta saa otta kuva"
         }else
