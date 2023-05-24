@@ -20,16 +20,16 @@ class TabBarController: UITabBarController
             return
         }
         
-        for viewController in viewControllers {
-            if let caardViewController = viewController as? CardViewNavigationController
-            {
-                if let cardViewConroller = caardViewController.viewControllers.first as? CardViewController
-                {
-                    cardViewConroller.puhelin = puhelin ?? "Zalupa Koshkina"
-                }
-            }
-                
-        }
+//        for viewController in viewControllers {
+////            if let caardViewController = viewController as? CardViewNavigationController
+//            {
+//                if let cardViewConroller = caardViewController.viewControllers.first as? CardViewController
+//                {
+//                    cardViewConroller.puhelin = puhelin ?? "Zalupa Koshkina"
+//                }
+//            }
+//                
+//        }
     }
     
 }

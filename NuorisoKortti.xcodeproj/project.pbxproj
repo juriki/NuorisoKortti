@@ -25,8 +25,6 @@
 		8E8E66232965832E009104C0 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E66222965832E009104C0 /* Model.swift */; };
 		8EC50481297AAFB20031505A /* ConnectionToServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC50480297AAFB20031505A /* ConnectionToServer.swift */; };
 		8EC50483297BF2A60031505A /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC50482297BF2A60031505A /* CardViewController.swift */; };
-		8ECDA5562A1AA66900321893 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECDA5552A1AA66900321893 /* TabBarController.swift */; };
-		8ECDA5582A1AAAB100321893 /* CardViewNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECDA5572A1AAAB100321893 /* CardViewNavigationController.swift */; };
 		8ECDA55A2A1BF45F00321893 /* kayttajaTiedot.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8ECDA5592A1BF45F00321893 /* kayttajaTiedot.txt */; };
 		8ECDA55C2A1C8B3200321893 /* nuoriTallenusPaikka.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECDA55B2A1C8B3200321893 /* nuoriTallenusPaikka.swift */; };
 /* End PBXBuildFile section */
@@ -69,8 +67,6 @@
 		8E8E66222965832E009104C0 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		8EC50480297AAFB20031505A /* ConnectionToServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionToServer.swift; sourceTree = "<group>"; };
 		8EC50482297BF2A60031505A /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
-		8ECDA5552A1AA66900321893 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		8ECDA5572A1AAAB100321893 /* CardViewNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewNavigationController.swift; sourceTree = "<group>"; };
 		8ECDA5592A1BF45F00321893 /* kayttajaTiedot.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = kayttajaTiedot.txt; sourceTree = "<group>"; };
 		8ECDA55B2A1C8B3200321893 /* nuoriTallenusPaikka.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nuoriTallenusPaikka.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,11 +123,9 @@
 			children = (
 				8E43C867295C71ED00B1BF51 /* GoogleService-Info.plist */,
 				8E4FEE80296703C500B2A8BF /* LoginNewViewController.swift */,
-				8ECDA5572A1AAAB100321893 /* CardViewNavigationController.swift */,
 				8E4CA1622923760C00D06651 /* AppDelegate.swift */,
 				8E4CA1642923760C00D06651 /* SceneDelegate.swift */,
 				8E4CA1682923760C00D06651 /* Main.storyboard */,
-				8ECDA5552A1AA66900321893 /* TabBarController.swift */,
 				8E5F4DC52A18C45A00B85941 /* SecondCarViewController.swift */,
 				8ECDA55B2A1C8B3200321893 /* nuoriTallenusPaikka.swift */,
 				8E4CA16B2923760F00D06651 /* Assets.xcassets */,
@@ -305,7 +299,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E5F4DC62A18C45A00B85941 /* SecondCarViewController.swift in Sources */,
-				8ECDA5562A1AA66900321893 /* TabBarController.swift in Sources */,
 				8ECDA55C2A1C8B3200321893 /* nuoriTallenusPaikka.swift in Sources */,
 				8E4FEEC0296BF9FF00B2A8BF /* Model2.swift in Sources */,
 				8E4CA1632923760C00D06651 /* AppDelegate.swift in Sources */,
@@ -314,7 +307,6 @@
 				8EC50481297AAFB20031505A /* ConnectionToServer.swift in Sources */,
 				8E60E3FF29CE18E700C27B42 /* Model3.swift in Sources */,
 				8E8E66232965832E009104C0 /* Model.swift in Sources */,
-				8ECDA5582A1AAAB100321893 /* CardViewNavigationController.swift in Sources */,
 				8E4FEE81296703C500B2A8BF /* LoginNewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

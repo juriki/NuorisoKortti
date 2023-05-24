@@ -28,7 +28,6 @@ class LoginNewViewController: UIViewController {
     @IBAction func logintxtChanged(_ sender: Any)
     {
         
-
         if(passworTxt.text!.count >= 8 && logintxt.text!.count >= 4)
         {
             NappiKirjaudu.isEnabled = true
@@ -65,14 +64,16 @@ class LoginNewViewController: UIViewController {
 
     override func viewDidLoad()
     {
-        super.viewDidLoad()
         
+        super.viewDidLoad()
+        navigationItem.hidesBackButton = true
+        NappiKirjaudu.isEnabled = false
         if(tallennusPaikka.tarkista(key: "Etunimi") != "Error")
         {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "CardViewController") as! CardViewController
             self.navigationController?.pushViewController(vc, animated: false)
         }
-        NappiKirjaudu.isEnabled = false
+
         }
     
     

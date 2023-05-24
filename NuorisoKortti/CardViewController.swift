@@ -9,7 +9,6 @@ import UIKit
 
 class CardViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet weak var BlockView: UIStackView!
     @IBOutlet weak var StakkiView: UIStackView!
     @IBOutlet weak var NimiSukunimiLabel: UILabel!
     @IBOutlet weak var NuorisokortiLabe: UILabel!
@@ -18,6 +17,7 @@ class CardViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var SaaOttaKuvaLabel: UILabel!
     @IBOutlet weak var KuvaView: UIImageView!
     
+    @IBOutlet weak var NAppi: UIButton!
     let tallennusPaikka = nuoriTallenusPaikka()
     var userAlldata: [String:Any] = [:]
     var nuoriID: Int?
@@ -37,6 +37,8 @@ class CardViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 //   Main
     override func viewDidLoad()
     {
+        navigationItem.hidesBackButton = true
+        NAppi.layer.cornerRadius = 8
 //        Lisätän varjo stakkin
         super.viewDidLoad()
         let shadow = StakkiView
@@ -71,18 +73,20 @@ class CardViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
     }
     
-
-//   Kuva lisäys nappi ja tarvittavat funktiot alapulella
-    @IBAction func GalleryButton(_ sender: UIButton) {
-        let vc = UIImagePickerController()
-        vc.sourceType = .photoLibrary
-        vc.delegate = self
-        vc.allowsEditing = true
-        present(vc, animated: true)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
+    @IBAction func GalleryButton(_ sender: Any) {
+                let vc = UIImagePickerController()
+                vc.sourceType = .photoLibrary
+                vc.delegate = self
+                vc.allowsEditing = true
+                present(vc, animated: true)
+    }
+
+    
+////   Kuva lisäys nappi ja tarvittavat funktiot alapulella
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
         if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")]as? UIImage
         {
 //            Haetan kuva galleriasta ja mukkatan se tekstti rivin base64
@@ -91,7 +95,7 @@ class CardViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             imagesourceCode = imageData?.base64EncodedString()
 //            Tallennetan kuva myös sisäiseen muistin
             tallennusPaikka.vaihdaYksi(key: "Kuva", data: imagesourceCode ?? "")
-            
+
 //            Lähetetään kuva backendin
             guard let url = URL(string: "https://nuorisomobile2023get.azurewebsites.net/api/WorkAssigments?") else {return}
             let parametrs = ["NuoriID": nuoriID as Any,
@@ -100,13 +104,13 @@ class CardViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                              "Osoite":"tieaskolan 3",
                              "Kuva": imagesourceCode ?? "",
                              "Kayttajanimi": "jurijuri"] as [String : Any]
-            
+
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             guard let httpBody = try? JSONSerialization.data(withJSONObject: parametrs,options: []) else {return}
             request.httpBody = httpBody
-            
+
             let session = URLSession.shared
             session.dataTask(with: request) {(data, response, error) in
                 if let response = response{
@@ -122,15 +126,15 @@ class CardViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                     print(error)
                 }
             }.resume()
-            
+
         }
         picker.dismiss(animated: true, completion: nil)
     }
-    
+
 //    jos kuva ei ole valittu niin tämä funktio estä virhe ilmoitusta
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
-    
+
     
 }

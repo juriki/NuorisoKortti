@@ -16,10 +16,16 @@ class SecondCarViewController: UIViewController {
     @IBOutlet weak var Sahkopisti: UILabel!
     @IBOutlet weak var SyntymaAika: UILabel!
     @IBOutlet weak var Allergiat: UILabel!
-    @IBOutlet weak var SaaOttaKuva: UIStackView!
     @IBOutlet weak var Osoite: UILabel!
     @IBOutlet weak var Nimi: UILabel!
     var tallennusPaikka = nuoriTallenusPaikka()
+    
+    @IBOutlet weak var SaaOttaKuva: UILabel!
+    
+    @IBAction func LogOut(_ sender: Any) {
+        //            Alustetaan Käyttäjän muisti
+                    tallennusPaikka.poista()
+    }
     
     override func viewDidLoad()
     {
@@ -29,17 +35,15 @@ class SecondCarViewController: UIViewController {
         shadow?.layer.shadowOpacity = 1
         shadow?.layer.shadowOffset = .zero
         shadow?.layer.shadowRadius = 20
-        shadow?.layer.cornerRadius = 10
         shadow?.layer.borderColor = UIColor.black.cgColor
         shadow?.layer.borderWidth = 1
-        
-        
+
+
         let shadow1 = NuoriId
         shadow1?.layer.cornerRadius = 10
 
-
-
-        
+        NuoriId.layer.cornerRadius = 50
+//
         Nimi.text = "Nimi : " + tallennusPaikka.tarkista(key: "Etunimi") + " " + tallennusPaikka.tarkista(key: "Sukunimi")
         Puhelinnumero.text = "Puhelinnumero : " + tallennusPaikka.tarkista(key: "Puhelinnumero")
         Kayttajanimi.text = "Käyttäjänimi " + tallennusPaikka.tarkista(key: "Kayttajanimi")
@@ -51,5 +55,4 @@ class SecondCarViewController: UIViewController {
     }
     
 
- 
 }
