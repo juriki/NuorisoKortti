@@ -9,7 +9,8 @@ import UIKit
 
 class CardViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet weak var StakkiView: UIStackView!
+    @IBOutlet weak var StackKorttieView: UIView!
+//    @IBOutlet weak var StakkiView: UIStackView!
     @IBOutlet weak var NimiSukunimiLabel: UILabel!
     @IBOutlet weak var NuorisokortiLabe: UILabel!
     @IBOutlet weak var PuhelinLabel: UILabel!
@@ -41,7 +42,7 @@ class CardViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         NAppi.layer.cornerRadius = 8
 //        Lisätän varjo stakkin
         super.viewDidLoad()
-        let shadow = StakkiView
+        let shadow = StackKorttieView
         shadow?.layer.shadowColor = UIColor.black.cgColor
         shadow?.layer.shadowOpacity = 1
         shadow?.layer.shadowOffset = .zero
@@ -56,7 +57,7 @@ class CardViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             let dataDecoded : Data = Data(base64Encoded: tallennusPaikka.tarkista(key: "Kuva"), options: .ignoreUnknownCharacters)!
             let decodedimage = UIImage(data: dataDecoded)
             KuvaView.image = decodedimage
-            
+
         }
         self.NimiSukunimiLabel.text = "Nimi : " + tallennusPaikka.tarkista(key: "Etunimi") + " " + tallennusPaikka.tarkista(key: "Sukunimi")
         self.PuhelinLabel.text = "Puhelin numero : " + tallennusPaikka.tarkista(key: "Puhelinnumero")

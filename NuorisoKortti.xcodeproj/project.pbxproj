@@ -27,6 +27,7 @@
 		8EC50483297BF2A60031505A /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC50482297BF2A60031505A /* CardViewController.swift */; };
 		8ECDA55A2A1BF45F00321893 /* kayttajaTiedot.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8ECDA5592A1BF45F00321893 /* kayttajaTiedot.txt */; };
 		8ECDA55C2A1C8B3200321893 /* nuoriTallenusPaikka.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECDA55B2A1C8B3200321893 /* nuoriTallenusPaikka.swift */; };
+		8EE80BBF2A1EC0F900362880 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE80BBE2A1EC0F900362880 /* PasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		8EC50482297BF2A60031505A /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		8ECDA5592A1BF45F00321893 /* kayttajaTiedot.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = kayttajaTiedot.txt; sourceTree = "<group>"; };
 		8ECDA55B2A1C8B3200321893 /* nuoriTallenusPaikka.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nuoriTallenusPaikka.swift; sourceTree = "<group>"; };
+		8EE80BBE2A1EC0F900362880 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				8E4FEEBF296BF9FF00B2A8BF /* Model2.swift */,
 				8EC50480297AAFB20031505A /* ConnectionToServer.swift */,
 				8EC50482297BF2A60031505A /* CardViewController.swift */,
+				8EE80BBE2A1EC0F900362880 /* PasswordViewController.swift */,
 				8ECDA5592A1BF45F00321893 /* kayttajaTiedot.txt */,
 			);
 			path = NuorisoKortti;
@@ -301,6 +304,7 @@
 				8E5F4DC62A18C45A00B85941 /* SecondCarViewController.swift in Sources */,
 				8ECDA55C2A1C8B3200321893 /* nuoriTallenusPaikka.swift in Sources */,
 				8E4FEEC0296BF9FF00B2A8BF /* Model2.swift in Sources */,
+				8EE80BBF2A1EC0F900362880 /* PasswordViewController.swift in Sources */,
 				8E4CA1632923760C00D06651 /* AppDelegate.swift in Sources */,
 				8E4CA1652923760C00D06651 /* SceneDelegate.swift in Sources */,
 				8EC50483297BF2A60031505A /* CardViewController.swift in Sources */,
