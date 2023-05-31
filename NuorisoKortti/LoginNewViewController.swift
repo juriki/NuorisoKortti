@@ -24,29 +24,20 @@ class LoginNewViewController: UIViewController {
 
     
     
-//Login ruutun tarkistus
-    @IBAction func logintxtChanged(_ sender: Any)
-    {
-        
-        if(passworTxt.text!.count >= 8 && logintxt.text!.count >= 4)
-        {
-            NappiKirjaudu.isEnabled = true
-            self.MyConnectionClass.getCard(_username: self.logintxt.text!)
-            self.MyPasswordClass.makeConnection(_userName: self.logintxt.text!, _password: self.passworTxt.text!)
-
-        }
-        else
-        {
-            NappiKirjaudu.isEnabled = false
-        }
-    }
     
+    
+    
+    @IBAction func Login(_ sender: Any) {
+        
+                    self.MyConnectionClass.getCard(_username: self.logintxt.text!)
+    }
+        
     
     @IBAction func passwordChanged(_ sender: Any) {
         if(passworTxt.text!.count >= 8 && logintxt.text!.count >= 4)
         {
             NappiKirjaudu.isEnabled = true
-            self.MyConnectionClass.getCard(_username: self.logintxt.text!)
+//            self.MyConnectionClass.getCard(_username: self.logintxt.text!)
             if(MyConnectionClass.aktivoitu == true)
             {
                 self.MyPasswordClass.makeConnection(_userName: self.logintxt.text!, _password: self.passworTxt.text!)
@@ -67,6 +58,7 @@ class LoginNewViewController: UIViewController {
         
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
+        navigationController?.isNavigationBarHidden = true
         NappiKirjaudu.isEnabled = false
         if(tallennusPaikka.tarkista(key: "Etunimi") != "Error")
         {

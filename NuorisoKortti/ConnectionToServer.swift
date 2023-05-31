@@ -38,16 +38,13 @@ class ConnectionToServer: UIViewController
                 guard let data = data else {return}
                 do
                 {
-                    if(data.count > 2){
+                    if(data.count > 2)
+                    {
                         let users = try JSONDecoder().decode([UserLogin].self, from: data)
                         self!.username = (users.first?.kayttajanimi)!
                         self!.islogged = true
                         self!.password = ""
-
-                        DispatchQueue.main.async
-                        {
-                            self!.islogged = true
-                        }
+                        self!.islogged = true
                     }
                     else
                     {
@@ -60,12 +57,7 @@ class ConnectionToServer: UIViewController
                 catch
                 {
                     self!.islogged = false
-//                    self!.etunimi = ""
-//                    self!.sukunimi = ""
-//                    self!.puhelin = ""
                     self!.voimassa = false
-//                    self!.kuvalupa = false
-//                    self!.username = ""
                     self!.password = "Tarkista Salasana"
                 }
             }
@@ -76,7 +68,7 @@ class ConnectionToServer: UIViewController
     
     
     
-    func getCard(_username: String)
+    func getCard(_username: String) 
     {
         guard let url = URL(string: "https://nuorisomobile2023get.azurewebsites.net/api/WorkAssigments?\(_username)") else {return}
 
@@ -88,9 +80,9 @@ class ConnectionToServer: UIViewController
                 let decode = JSONDecoder()
                 let dateFormater = DateFormatter()
                 dateFormater.dateFormat = "YYYY-MM-dd"
-                
                 decode.dateDecodingStrategy = .formatted(dateFormater)
                 let users = try JSONDecoder().decode([User].self, from: data)
+
                 if(data.count > 5)
                 {
                     self.nuoriId = (users.first?.nuoriId)!
@@ -118,7 +110,6 @@ class ConnectionToServer: UIViewController
                                      "Kuva": self.image,
                                      "Kayttajanimi": self.kayttajanimi,
                                      ] as [String : Any]
-
                 }else
                 {
                     self.aktivoitu = false

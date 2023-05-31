@@ -9,8 +9,9 @@ import UIKit
 
 class SecondCarViewController: UIViewController {
 
+    @IBOutlet weak var StakkiView: UIView!
     @IBOutlet weak var NuoriId: UILabel!
-    @IBOutlet weak var StakkiView: UIStackView!
+//    @IBOutlet weak var StakkiView: UIStackView!
     @IBOutlet weak var Puhelinnumero: UILabel!
     @IBOutlet weak var Kayttajanimi: UILabel!
     @IBOutlet weak var Sahkopisti: UILabel!
@@ -35,15 +36,12 @@ class SecondCarViewController: UIViewController {
         shadow?.layer.shadowOpacity = 1
         shadow?.layer.shadowOffset = .zero
         shadow?.layer.shadowRadius = 20
+        shadow?.layer.cornerRadius = 10
         shadow?.layer.borderColor = UIColor.black.cgColor
-        shadow?.layer.borderWidth = 1
+        shadow?.layer.borderWidth = 0.5
 
 
-        let shadow1 = NuoriId
-        shadow1?.layer.cornerRadius = 10
 
-        NuoriId.layer.cornerRadius = 50
-//
         Nimi.text = "Nimi : " + tallennusPaikka.tarkista(key: "Etunimi") + " " + tallennusPaikka.tarkista(key: "Sukunimi")
         Puhelinnumero.text = "Puhelinnumero : " + tallennusPaikka.tarkista(key: "Puhelinnumero")
         Kayttajanimi.text = "Käyttäjänimi " + tallennusPaikka.tarkista(key: "Kayttajanimi")
