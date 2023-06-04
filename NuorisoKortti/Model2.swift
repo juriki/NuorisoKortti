@@ -7,7 +7,13 @@
 
 import Foundation
 
+
+
 struct User2: Decodable{
+//    Todo delet if not work
+
+    
+    
     
     let NuoriId: String?
     let Etunimi: String?

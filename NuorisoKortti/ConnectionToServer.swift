@@ -68,7 +68,7 @@ class ConnectionToServer: UIViewController
     
     
     
-    func getCard(_username: String) 
+    func getCard(_username: String)
     {
         guard let url = URL(string: "https://nuorisomobile2023get.azurewebsites.net/api/WorkAssigments?\(_username)") else {return}
 
@@ -82,7 +82,7 @@ class ConnectionToServer: UIViewController
                 dateFormater.dateFormat = "YYYY-MM-dd"
                 decode.dateDecodingStrategy = .formatted(dateFormater)
                 let users = try JSONDecoder().decode([User].self, from: data)
-
+                print(users.first?.kayttajanimi ??  "")
                 if(data.count > 5)
                 {
                     self.nuoriId = (users.first?.nuoriId)!
@@ -110,11 +110,14 @@ class ConnectionToServer: UIViewController
                                      "Kuva": self.image,
                                      "Kayttajanimi": self.kayttajanimi,
                                      ] as [String : Any]
+                    
+                
                 }else
                 {
                     self.aktivoitu = false
                     self.islogged = false
                     self.username = "Tarkista Käyttäjänimi"
+                    return
                 }
             }
             catch
@@ -131,6 +134,39 @@ class ConnectionToServer: UIViewController
                 self.aktivoitu = false
             }
         }.resume()
+    }
+    
+    
+    
+    
+    func updateUserData(completion: @escaping(_ String: Any)-> Void, username: String, key : String)
+    {
+        let urlshare = "https://nuorisomobile2023get.azurewebsites.net/api/WorkAssigments?\(username)"
+        
+        let url = URL(string: urlshare)!
+        let request = URLRequest(url: url)
+        URLSession.shared.dataTask(with: request){data, response, error in
+            guard let data else { return }
+            if let userNewData = try? JSONDecoder().decode([User].self, from: data)
+            {
+                switch key {
+                case "kuva":
+                    completion(userNewData[0].kuva ?? "")
+                    return
+                    
+                case "aktivointi":
+                    completion(userNewData[0].aktivointi)
+                    return
+                default:
+                    print("Worng CASE")
+                }
+            }else
+            {
+                print("error")
+            }
+        }.resume()
+
+        
     }
 }
     

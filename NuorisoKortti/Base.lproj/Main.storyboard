@@ -283,6 +283,11 @@
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oOS-xZ-com">
                         <rect key="frame" x="0.0" y="878" width="430" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <toolbarAppearance key="standardAppearance"/>
+                        <toolbarAppearance key="scrollEdgeAppearance" backgroundEffect="regular">
+                            <color key="backgroundColor" red="0.69373942896262886" green="0.16418586459350928" blue="0.23233787085845578" alpha="0.352338103210034" colorSpace="custom" customColorSpace="displayP3"/>
+                        </toolbarAppearance>
+                        <toolbarAppearance key="compactScrollEdgeAppearance" backgroundEffect="regular"/>
                     </toolbar>
                     <connections>
                         <segue destination="xev-qW-L1D" kind="relationship" relationship="rootViewController" id="1Gh-gY-Mex"/>
@@ -297,7 +302,7 @@
         <scene sceneID="2bh-cX-tw5">
             <objects>
                 <viewController storyboardIdentifier="SecondCarViewController" id="gUO-Cm-dTg" customClass="SecondCarViewController" customModule="NuorisoKortti" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Jgp-Tg-BBy">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="Jgp-Tg-BBy">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -417,6 +422,32 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hec-Ui-lq0">
+                                        <rect key="frame" x="96" y="463" width="148" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="RLt-ZU-Hzv"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="Vy2-k2-WK3"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="148" id="X4t-n2-RwC"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="Z2A-FB-bck"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="148" id="rcH-mR-Rpu"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Vaihda Salasana">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.1942114234" green="0.4491663575" blue="0.85886353250000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <font key="NSFont" size="14" name="Helvetica-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="charWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        <integer key="NSUnderline" value="1"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <segue destination="37T-m2-VHW" kind="presentation" id="OQd-LO-6Sx"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -429,6 +460,8 @@
                                     <constraint firstItem="AhQ-QP-plc" firstAttribute="top" secondItem="Yhz-lO-HKZ" secondAttribute="top" constant="10" id="AeI-Pb-dZx"/>
                                     <constraint firstAttribute="trailing" secondItem="Kk4-AI-2FZ" secondAttribute="trailing" constant="10" id="BYD-u6-CHv"/>
                                     <constraint firstAttribute="trailing" secondItem="zux-3x-gff" secondAttribute="trailing" constant="10" id="CdI-Gp-fRl"/>
+                                    <constraint firstItem="hec-Ui-lq0" firstAttribute="leading" secondItem="Yhz-lO-HKZ" secondAttribute="leading" constant="96" id="DJJ-s9-FG1"/>
+                                    <constraint firstAttribute="trailing" secondItem="hec-Ui-lq0" secondAttribute="trailing" constant="96" id="ED6-iA-Tam"/>
                                     <constraint firstItem="Q7h-1f-rfI" firstAttribute="centerX" secondItem="Yhz-lO-HKZ" secondAttribute="centerX" id="G8I-E8-RjX"/>
                                     <constraint firstItem="PJl-b1-0Wq" firstAttribute="centerX" secondItem="Yhz-lO-HKZ" secondAttribute="centerX" id="GhG-xA-ig0"/>
                                     <constraint firstAttribute="trailing" secondItem="Hlz-Kn-unR" secondAttribute="trailing" constant="10" id="H8m-s9-yYv"/>
@@ -446,6 +479,7 @@
                                     <constraint firstItem="xCf-mm-Lzs" firstAttribute="centerX" secondItem="Yhz-lO-HKZ" secondAttribute="centerX" id="Ya6-F0-hnV"/>
                                     <constraint firstItem="AhQ-QP-plc" firstAttribute="top" secondItem="Yhz-lO-HKZ" secondAttribute="top" constant="10" id="aBv-OD-wXo"/>
                                     <constraint firstItem="Hlz-Kn-unR" firstAttribute="top" secondItem="GCd-g0-Njo" secondAttribute="bottom" id="adm-kz-g7H"/>
+                                    <constraint firstItem="hec-Ui-lq0" firstAttribute="top" secondItem="Yhz-lO-HKZ" secondAttribute="bottom" constant="-35" id="as2-GU-guD"/>
                                     <constraint firstItem="Kk4-AI-2FZ" firstAttribute="leading" secondItem="Yhz-lO-HKZ" secondAttribute="leading" constant="10" id="cNQ-DA-bpR"/>
                                     <constraint firstItem="Q7h-1f-rfI" firstAttribute="leading" secondItem="Yhz-lO-HKZ" secondAttribute="leading" constant="10" id="cxo-Hz-r8v"/>
                                     <constraint firstAttribute="trailing" secondItem="Hlz-Kn-unR" secondAttribute="trailing" constant="10" id="dF1-RK-Ho9"/>
@@ -465,35 +499,14 @@
                                     <constraint firstAttribute="trailing" secondItem="Hlz-Kn-unR" secondAttribute="trailing" constant="10" id="ugt-2u-b3u"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hec-Ui-lq0">
-                                <rect key="frame" x="120" y="749" width="148" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="RLt-ZU-Hzv"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="Vy2-k2-WK3"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="148" id="X4t-n2-RwC"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="Z2A-FB-bck"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="148" id="rcH-mR-Rpu"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Vaihda Salasana">
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" red="0.32240044740000001" green="0.9303959933" blue="0.15462126030000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="37T-m2-VHW" kind="presentation" id="OQd-LO-6Sx"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZhI-Xk-Kza"/>
                         <color key="backgroundColor" red="0.99578827619999999" green="0.98090952629999995" blue="0.9450928569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Yhz-lO-HKZ" firstAttribute="top" secondItem="ZhI-Xk-Kza" secondAttribute="top" constant="156" id="8Nj-Cs-6KM"/>
-                            <constraint firstItem="hec-Ui-lq0" firstAttribute="top" secondItem="Yhz-lO-HKZ" secondAttribute="bottom" constant="39" id="XVs-Ji-HTO"/>
                             <constraint firstItem="Yhz-lO-HKZ" firstAttribute="centerY" secondItem="Jgp-Tg-BBy" secondAttribute="centerY" id="qML-HL-JJx"/>
                             <constraint firstItem="Yhz-lO-HKZ" firstAttribute="centerX" secondItem="Jgp-Tg-BBy" secondAttribute="centerX" id="vF4-aQ-OEe"/>
-                            <constraint firstItem="hec-Ui-lq0" firstAttribute="leading" secondItem="ZhI-Xk-Kza" secondAttribute="leading" constant="120" id="w07-a7-5Wh"/>
                             <constraint firstItem="Yhz-lO-HKZ" firstAttribute="leading" secondItem="ZhI-Xk-Kza" secondAttribute="leading" constant="35" id="wg9-Yg-QBT"/>
-                            <constraint firstItem="ZhI-Xk-Kza" firstAttribute="trailing" secondItem="hec-Ui-lq0" secondAttribute="trailing" constant="119" id="xHk-g9-SQB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Minusta" id="kGe-ba-SeC">

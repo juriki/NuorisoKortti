@@ -55,7 +55,7 @@ class LoginNewViewController: UIViewController {
 
     override func viewDidLoad()
     {
-        
+        self.navigationController?.isToolbarHidden = true
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
         navigationController?.isNavigationBarHidden = true

@@ -7,14 +7,9 @@
 
 import Foundation
 
+
 struct User: Decodable{
-//    Vanha tieto
-//    let KayttajaId: String?
-//    let Kayttajanimi: String?
-//    let Salasana: String?
-//    let Yllapito: String?
-//
-    
+
     let nuoriId: Int?
     let etunimi: String?
     let sukunimi: String?
@@ -31,3 +26,6 @@ struct User: Decodable{
 
 }
 
+struct useki: Decodable{
+    let usek: [User]
+}

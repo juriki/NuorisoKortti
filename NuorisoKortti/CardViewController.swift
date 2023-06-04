@@ -33,32 +33,40 @@ class CardViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     var aktiv: Bool = false
     var kuvauslupa = false
     var imagesourceCode : String?
-    @State var connection = ConnectionToServer()
+    var connection = ConnectionToServer()
+    var userDataNEW = [User]()
+    var newUSer = NuorisoKortti.User.self
     
     
-    
-    override func viewWillAppear(_ animated: Bool){
-        
-        super.viewWillAppear(animated)
-        self.connection.getCard(_username: "jurijuri1")
-        //        DispatchQueue.global().async
-        //        {
-        //            self.connection.getCard(_username: "jurijuri1")
-        //        }
+    override func viewDidAppear(_ animated: Bool) {
+            print("test")
     }
-    //   Main
-    
     
     
     override func viewDidLoad()
     {
-        self.connection.getCard(_username: "jurijuri1")
         setOutlets()
         setShadow()
         super.viewDidLoad()
+        self.navigationController?.isToolbarHidden = false
+        connection.getCard(_username: tallennusPaikka.tarkista(key: "Kayttajanimi"))
         print(self.connection.etunimi)
         navigationController?.isNavigationBarHidden = false
+        self.connection.updateUserData(completion: {[weak self] values  in
+            DispatchQueue.main.async {
+                guard self != nil else { return}
+                if(values as? String != self?.tallennusPaikka.tarkista(key: "Kuva"))
+                {
+                    self?.tallennusPaikka.vaihdaYksi(key: "Kuva", data: values as? String ?? "")
+                    self?.setOutlets()
+                    
+                }
+            }
+        }, username: tallennusPaikka.tarkista(key: "Kayttajanimi"), key: "kuva")
     }
+                
+    
+    
     
     
     
