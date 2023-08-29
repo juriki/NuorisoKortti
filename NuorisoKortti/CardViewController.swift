@@ -118,7 +118,7 @@ func rotate(view: UIView, to angle: Double)
     
     func setShadow()
     {
-//        Lisätän varjo stakkin
+//        Lisätän varjo stakkin ok on
         let shadow = StackKorttieView
         shadow?.layer.shadowColor = UIColor.black.cgColor
         shadow?.layer.shadowOpacity = 1
