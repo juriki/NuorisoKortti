@@ -131,6 +131,7 @@ class ConnectionToServer: UIViewController
                 self.kuvalupa = false
                 self.username = ""
                 self.username = "Tarkista Käyttäjänimi"
+                self.username = "Käyttäjänimi on väärin"
                 self.aktivoitu = false
             }
         }.resume()
