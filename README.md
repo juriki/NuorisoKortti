@@ -1,37 +1,36 @@
-# NuorisoTaloKortti
+
+# NuorisoTaloKortti iOS
+
+Suomeksi | English
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Platform: iOS](https://img.shields.io/badge/iOS-Swift-lightgrey.svg)]()
+[![Main Repo](https://img.shields.io/badge/Main_Repo-NuorisoTaloKortti-blue.svg)](https://github.com/juriki/NuorisoTaloKortti)
+
 Suomeksi
 
-NuorisoTaloKortti on digitaalinen kulkulupajärjestelmä nuorisotaloille.
-Jokaisella käyttäjällä on kortti, joka näkyy puhelimen näytöllä ja sisältää valokuvan, nimen ja muuta tärkeää tietoa.
+Tämä on iOS (Swift) versio NuorisoTaloKortti -projektista.
+Android ja Web versiot löytyvät pääsääntöisestä repositoriosta: https://github.com/juriki/NuorisoTaloKortti
 
 ### Ominaisuudet
-- Digitaalisten kulkulupien luominen ja tallennus
+- Digitaalisten kulkulupien näyttäminen iOS-laitteella
 - Käyttäjän valokuva ja henkilötiedot kortissa
-- Web-hallintaliittymä korttien moderointiin
-- Monialustaiset sovellukset: Android (.NET), iOS (Swift) ja Web (ASP.NET Core)
-- Keskitetty tietokanta: Microsoft SQL Server / Azure
+- Synkronointi palvelimen kanssa REST API:n kautta
+- Tuki monialustaisille tiedoille, pääsääntöinen repositorio Android/Web
 
-### Teknologia-arkkitehtuuri
-- Palvelin: .NET + MS SQL Server / Azure
-- Android: .NET (Xamarin)
+### Teknologia
 - iOS: Swift
-- Web: ASP.NET Core + HTML/CSS + JavaScript
-- API: REST API sovellusten yhdistämiseksi
+- Backend: REST API (pääsääntöinen repositorio: https://github.com/juriki/NuorisoTaloKortti)
 
-### Asennus ja käynnistys (palvelin)
-git clone https://github.com/juriki/NuorisoTaloKortti.git
-cd NuorisoTaloKortti
-Määritä tietokantayhteys tiedostossa appsettings.json
-dotnet run
-Palvelin: http://localhost:5000
-
-### Asiakasohjelmat
-- Android (.NET): avaa projekti Visual Studiossa
-- iOS (Swift): avaa Xcodessa
-- Web (ASP.NET Core): dotnet build
+### Asennus ja käynnistys
+1. Kloonaa Swift-repositorio:
+   git clone https://github.com/juriki/NuorisoKortti.git
+   cd NuorisoKortti
+2. Avaa `NuorisoTaloKortti.xcodeproj` tai `.xcworkspace` Xcodessa
+3. Rakenna ja suorita projekti simulaattorissa tai laitteessa
 
 ### Kuvakaappaukset
-Tulossa pian: mobiilikortinäkymä ja web-moderaattorin paneeli
+Tulossa pian: mobiilikortinäkymä iOS-laitteella
 
 ### Osallistuminen
 Forkkaa repositorio
@@ -46,37 +45,28 @@ MIT
 
 English
 
-NuorisoTaloKortti is a digital access card system for youth centers.
-Each user has a card displayed on their phone screen containing a photo, name, and other key information.
+This is the iOS (Swift) version of the NuorisoTaloKortti project.
+Android and Web versions are available in the main repository: https://github.com/juriki/NuorisoTaloKortti
 
 ### Features
-- Create and store digital access cards
-- Display user photo and personal details on the card
-- Web interface for card moderation
-- Cross-platform clients: Android (.NET), iOS (Swift), and Web (ASP.NET Core)
-- Centralized database: Microsoft SQL Server / Azure
+- Display digital access cards on iOS devices
+- Show user photo and personal details on the card
+- Sync with the server via REST API
+- Supports cross-platform data, main repository handles Android/Web
 
-### Technology Stack
-- Backend: .NET + MS SQL Server / Azure
-- Android: .NET (Xamarin)
+### Technology
 - iOS: Swift
-- Web: ASP.NET Core + HTML/CSS + JavaScript
-- API: REST API for client integration
+- Backend: REST API (main repository: https://github.com/juriki/NuorisoTaloKortti)
 
-### Installation & Run (server)
-git clone https://github.com/juriki/NuorisoTaloKortti.git
-cd NuorisoTaloKortti
-Configure the database connection in appsettings.json
-dotnet run
-Server: http://localhost:5000
-
-### Clients
-- Android (.NET): open the project in Visual Studio
-- iOS (Swift): open in Xcode
-- Web (ASP.NET Core): dotnet build
+### Installation & Run
+1. Clone the Swift repository:
+   git clone https://github.com/juriki/NuorisoKortti.git
+   cd NuorisoKortti
+2. Open `NuorisoTaloKortti.xcodeproj` or `.xcworkspace` in Xcode
+3. Build and run on a simulator or device
 
 ### Screenshots
-Coming soon: mobile card view and web moderation panel
+Coming soon: mobile card view on iOS
 
 ### Contributing
 Fork the repository
@@ -86,3 +76,4 @@ Open a Pull Request
 
 ### License
 MIT
+</pre>
